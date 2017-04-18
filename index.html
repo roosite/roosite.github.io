@@ -8,7 +8,7 @@ if [[ -z "${NO_PIP}" ]]; then
 else:
   echo " -----> we could not find pip"
   echo " Please install pip"
-  exit 1
+  exit
 fi
 
 if [[ -z "${EXIT_NOGIT}" ]]; then
@@ -25,5 +25,5 @@ else
   echo "    Then, run the installer again." 
   echo ""
   echo "=============================="
-  exit 1
+  exit
 fi

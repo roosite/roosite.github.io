@@ -1,4 +1,14 @@
 mkdir -p $HOME/.roosite
-git clone https://github.com/alteroo/roosite.launchkit $HOME/.roosite/roosite.launchkit || echo "Sorry. Please install the git command and then run the installer again" && exit 1
+git clone https://github.com/alteroo/roosite.launchkit $HOME/.roosite/roosite.launchkit || EXIT_NOGIT=1
+if [[ -z "${EXIT_NOGIT}" ]]; then
+echo "=============================="
+echo ""
+echo "Sorry no git command found"
+echo "Please install the git command and then run the installer again" 
+echo ""
+echo "=============================="
+exit 1
+else
 cd $HOME/.roosite/roosite.launchkit
 bash init-roo
+fi

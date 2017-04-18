@@ -1,7 +1,17 @@
 mkdir -p $HOME/.roosite
 rm -rf $HOME/.roosite/roosite.launchkit
-git clone https://github.com/alteroo/roosite.launchkit $HOME/.roosite/roosite.launchkit || export EXIT_NOGIT=1
+which pip || export NO_PIP=1
+which git || export EXIT_NOGIT=1
+
+if [[ -z "${NO_PIP}" ]]; then
+  echo " -----> found pip (that's good)"
+else:
+  echo " -----> we could not find pip"
+  echo " Please install pip"
+fi
+
 if [[ -z "${EXIT_NOGIT}" ]]; then
+   git clone https://github.com/alteroo/roosite.launchkit $HOME/.roosite/roosite.launchkit
    cd $HOME/.roosite/roosite.launchkit
    bash init-roo
 else

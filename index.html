@@ -1,4 +1,5 @@
 mkdir -p $HOME/.roosite
+rm -rf $HOME/.roosite/roosite.launchkit
 git clone https://github.com/alteroo/roosite.launchkit $HOME/.roosite/roosite.launchkit || export EXIT_NOGIT=1
 if [[ -z "${EXIT_NOGIT}" ]]; then
    cd $HOME/.roosite/roosite.launchkit

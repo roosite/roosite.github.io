@@ -1,7 +1,7 @@
 mkdir -p $HOME/.roosite
 rm -rf $HOME/.roosite/roosite.launchkit
-which pip || export NO_PIP=1
-which git || export EXIT_NOGIT=1
+which pip || NO_PIP=1
+which git || EXIT_NOGIT=1
 
 if [[ -z "${NO_PIP}" ]]; then
   echo " -----> found pip (that's good)"
